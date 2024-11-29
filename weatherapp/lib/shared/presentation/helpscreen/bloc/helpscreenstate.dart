@@ -1,9 +1,11 @@
-abstract class Helpscreenstate {}
+abstract class HelpscreenState {}
 
-class HelpscreenInital extends Helpscreenstate {
-  HelpscreenInital();
-}
+class HelpscreenInitial extends HelpscreenState {}
 
-class HelpscreenLoading extends Helpscreenstate {
-  HelpscreenLoading();
+class HelpscreenLoading extends HelpscreenState {}
+
+class NavigateToNextScreen extends HelpscreenState {
+  final bool wasSkipped;
+
+  NavigateToNextScreen({required this.wasSkipped});
 }

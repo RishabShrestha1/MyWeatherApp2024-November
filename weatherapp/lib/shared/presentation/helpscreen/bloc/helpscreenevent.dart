@@ -1,3 +1,5 @@
-abstract class Helpscreenevent {}
+abstract class HelpscreenEvent {}
 
-class SkipButtonPressed extends Helpscreenevent {}
+class SkipButtonPressed extends HelpscreenEvent {}
+
+class DefaultNavigation extends HelpscreenEvent {}
