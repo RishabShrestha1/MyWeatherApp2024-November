@@ -4,7 +4,9 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:weatherapp/core/router/approutes.dart';
 import 'package:weatherapp/core/styles/app_theme.dart';
+import 'package:weatherapp/features/datasources/weatherdatacontroller.dart';
 import 'package:weatherapp/shared/presentation/helpscreen/bloc/helpscreenbloc.dart';
+import 'package:weatherapp/shared/presentation/homescreen/bloc/homepagebloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,6 +32,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => HelpScreenBloc(),
+        ),
+        BlocProvider(
+          create: (context) => WeatherBloc(WeatherDataController()),
         ),
       ],
       child: MaterialApp.router(
