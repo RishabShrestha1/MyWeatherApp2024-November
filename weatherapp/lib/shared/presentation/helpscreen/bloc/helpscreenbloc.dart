@@ -8,25 +8,22 @@ class HelpScreenBloc extends HydratedBloc<HelpscreenEvent, HelpscreenState> {
   Timer? _navigationTimer;
 
   HelpScreenBloc() : super(HelpscreenInitial()) {
-    // Handle manual skip button press
     on<SkipButtonPressed>((event, emit) {
-      _navigationTimer?.cancel(); // Cancel any existing timer
-      emit(NavigateToNextScreen(
-          wasSkipped: true)); // Mark that this was a manual skip
+      _navigationTimer?.cancel();
+      emit(
+        NavigateToNextScreen(wasSkipped: true),
+      );
     });
 
-    // Handle timer initialization
     on<InitializeTimer>((event, emit) {
-      _navigationTimer?.cancel(); // Ensure we don't have multiple timers
+      _navigationTimer?.cancel();
       _navigationTimer = Timer(const Duration(seconds: 5), () {
-        // When timer completes, navigate but don't mark as skipped
         add(TimerComplete());
       });
     });
 
-    // Handle timer completion
     on<TimerComplete>((event, emit) {
-      emit(NavigateToNextScreen(wasSkipped: false)); // Not marked as skipped
+      emit(NavigateToNextScreen(wasSkipped: false));
     });
   }
 

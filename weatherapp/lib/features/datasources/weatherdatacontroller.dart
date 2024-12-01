@@ -16,6 +16,7 @@ class WeatherDataController {
 
       return WeatherDataFromApi.fromJson(jsonDecode(response.body));
     } else {
+      log('Response: ${response.body}');
       throw Exception('Failed to load weather data');
     }
   }

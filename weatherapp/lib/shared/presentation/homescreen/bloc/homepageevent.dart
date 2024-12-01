@@ -12,3 +12,5 @@ class FetchWeatherByCoordinates extends WeatherEvent {
 
   FetchWeatherByCoordinates(this.latitude, this.longitude);
 }
+
+class AutoFetchWeather extends WeatherEvent {}

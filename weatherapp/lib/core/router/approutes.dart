@@ -23,7 +23,10 @@ final approutes = GoRouter(
     final bloc = context.read<HelpScreenBloc>();
     if (bloc.state is NavigateToNextScreen) {
       final navigateState = bloc.state as NavigateToNextScreen;
-      if (navigateState.wasSkipped && state.uri.toString() == '/helppage') {
+      // Only redirect if this is the initial app launch and help screen was skipped
+      if (navigateState.wasSkipped &&
+          state.uri.toString() == '/helppage' &&
+          !state.extra.toString().contains('intentionalNavigation')) {
         return '/homepage';
       }
     }

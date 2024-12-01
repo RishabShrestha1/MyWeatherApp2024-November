@@ -7,7 +7,7 @@ class AppTheme {
     primaryColor: AppColors.Color1,
     scaffoldBackgroundColor: AppColors.Color3,
     appBarTheme: const AppBarTheme(
-      color: AppColors.Color1,
+      color: AppColors.Color1basic,
       iconTheme: IconThemeData(color: AppColors.Color3),
     ),
     textTheme: const TextTheme(

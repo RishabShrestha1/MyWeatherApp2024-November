@@ -1,20 +1,24 @@
 # weatherapp
 
-A new Flutter project.
+A new Weather App which uses The Weather Api to get the data to show the weather.
 
 
-## Getting Started
+## Project Details
 
-The Color Pallete Used is as follows 
+The Color Pallete for the color of the app Used is as follows 
  https://colorhunt.co/palette/78b3cec9e6f0fbf8eff96e2a
 
-This project is a starting point for a Flutter application.
+The Packages used are 
+  flutter_svg: ^2.0.16
+    This was used to render svg images on the app as svg is not supported by Image widget
+  flutter_bloc: ^8.1.6 &&  bloc: ^8.1.4 &&  equatable: ^2.0.7
+    These are used to carryout the statemanagement in the app
+  hive_flutter: ^1.1.0 &&  hydrated_bloc: ^9.1.5 &&   path_provider: ^2.1.5
+    These Facilitated the location retention in the app i normally use hive but i have tried out hydrated bloc as a new method
+  geolocator: ^13.0.2 && permission_handler: ^11.3.1
+    For identifying the current Location
+  network_image: ^0.1.1
+    For Rendering Image from the Api Displaying the Weather
+  http: ^1.2.2
+    Its used to carry out api data fetching
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
